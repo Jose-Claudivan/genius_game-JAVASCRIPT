@@ -19,7 +19,7 @@ let randomOrder = () => {
     clickedOrder = [];
 
     for(let i in order) {
-        let elementColor = creatElement(order[i]);
+        let elementColor = creatColorElement(order[i]);
         lightColor(elementColor, Number(i) + 1);
     }
 }
@@ -47,5 +47,17 @@ let checkOrder = () => {
         alert(`Pontuação: ${score}\nVocê acertou! Iniciando o próximo nível...`);
         nextLevel();
     }
+}
+
+//seleciona a cor
+let click = (color) => {
+    clickedOrder[clickedOrder.length] = color;
+    creatColorElement(color).classList.add('selected');
+
+    setTimeout(() => {
+        creatColorElement(color).classList.remove('selected');
+    });
+
+    checkOrder();
 }
 
