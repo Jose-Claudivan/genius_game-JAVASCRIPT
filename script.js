@@ -26,10 +26,10 @@ let randomOrder = () => {
 
 //acende a proxima cor
 let lightColor = (element, number) => {
-    time = time * 500;
+    number = number * 500;
     setTimeout(() => {
         element.classList.add('selected');
-    },tempo - 250);
+    },number - 250);
     setTimeout(() => {
         element.classList.remove('selected');
     });
@@ -56,9 +56,8 @@ let click = (color) => {
 
     setTimeout(() => {
         creatColorElement(color).classList.remove('selected');
-    });
-
-    checkOrder();
+        checkOrder();
+    },250);
 }
 
 //funcao que retorna a cor
@@ -89,9 +88,19 @@ let gameOver = () => {
     playGame();
 }
 
+//inicio do jogo
 let playGame = () => {
     alert('Bem vindo! Iniciando novo jogo!');
     score = 0;
 
     nextLevel();
 }
+
+//eventos de click
+green.onclick = () => click(0);
+red.onclick = () => click(1);
+yellow.onclick = () => click(2);
+blue.onclick = () => click(3);
+
+//inicio do jogo
+playGame();
