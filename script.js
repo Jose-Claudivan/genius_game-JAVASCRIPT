@@ -61,3 +61,22 @@ let click = (color) => {
     checkOrder();
 }
 
+//funcao que retorna a cor
+let creatColorElement = (color) => {
+    if(color == 0) {
+        return green;
+    } else if (color == 1) {
+        return red;
+    } else if (color == 2) {
+        return yellow;
+    } else if (color == 3) {
+        return blue;
+    }
+}
+
+//Proximo nivel
+let nextLevel = () => {
+    score++;
+    randomOrder();
+}
+
